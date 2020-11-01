@@ -28,35 +28,38 @@ public class Wing : MonoBehaviour
     private float angleOfAttack = 0f;
     private float liftCoefficient = 0f;
     private float liftForce = 0f;
-    private Vector3 liftDirection = new Vector3(0f,0f,0f);
-    private Vector3 liftVector = new Vector3(0f,0f,0f);
-    private Vector3 localVelocity = new Vector3(0f,0f,0f);
+    private Vector3 liftDirection;
+    private Vector3 liftVector;
+    private Vector3 localVelocity;
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if (wingArea == 0) {
-            wingArea = (dimensions.x + 0.0001f) * (dimensions.y + 0.0001f);
-        }
+        rigid = GetComponentInParent<Rigidbody>();
+        liftDirection = rigid.transform.up;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.DrawRay(transform.position, liftVector*0.00001f, Color.green);
+        Debug.Log("Lift Direction: " + liftDirection + "\tLift Force: " + liftForce + "\tCL: " + liftCoefficient + "\tAoA: " + angleOfAttack);
     }
 
     void FixedUpdate()
     {
-        localVelocity = transform.InverseTransformDirection(rigid.GetPointVelocity(transform.position));
+        localVelocity = transform.InverseTransformDirection(rigid.GetPointVelocity(rigid.transform.position));
         localVelocity.x = 0f;
-        angleOfAttack = Vector3.Angle(Vector3.forward, localVelocity);
+        angleOfAttack = Vector3.Angle(rigid.transform.forward, localVelocity.normalized);
         liftCoefficient = liftCurve.Evaluate(angleOfAttack);
 
-        liftForce = liftCoefficient * airDensity * localVelocity.sqrMagnitude * wingArea * 0.5f * -Mathf.Sign(localVelocity.y);
-        liftDirection = Vector3.Cross(rigid.velocity, transform.right).normalized;
+        liftForce = liftCoefficient /* * airDensity  */* localVelocity.sqrMagnitude * wingArea /* 0.5f */ * -Mathf.Sign(localVelocity.normalized.y);
+        liftDirection = Vector3.Cross(rigid.velocity, rigid.transform.right).normalized;
 
-        rigid.AddForceAtPosition(liftForce * liftDirection, transform.position);
+        liftVector = liftForce * liftDirection;
+
+        Vector3 applicationPoint = transform.position;
+        rigid.AddForceAtPosition(liftVector, applicationPoint);
     }
 }
