@@ -25,6 +25,6 @@ public class Thruster : MonoBehaviour
 
     void FixedUpdate()
     {
-        rigid.AddForceAtPosition(thrust*throttle*rigid.transform.forward, transform.position);
+        rigid.AddForceAtPosition(thrust*throttle*Vector3.forward, transform.position);
     }
 }
