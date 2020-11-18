@@ -57,7 +57,9 @@ public class Wing : MonoBehaviour
     void Update()
     {
         Debug.DrawRay(transform.position, liftVector*0.001f, Color.green);
+        Debug.DrawRay(transform.position, dragVector*0.001f, Color.red);
         Debug.Log("Lift Direction: " + liftDirection + "\tLift Force: " + liftForce + "\tCL: " + liftCoefficient + "\tAoA: " + angleOfAttack);
+        Debug.Log("Drag Direction: " + dragDirection + "\tDrag Force: " + dragForce + "\tCD: " + dragCoefficient + "\tAoA: " + angleOfAttack);
     }
 
     void FixedUpdate()
@@ -66,13 +68,18 @@ public class Wing : MonoBehaviour
         localVelocity.x = 0f;
         angleOfAttack = Vector3.Angle(Vector3.forward, localVelocity.normalized);
         liftCoefficient = liftCurve.Evaluate(angleOfAttack);
+        dragCoefficient = dragCurve.Evaluate(angleOfAttack);
 
         liftForce = liftCoefficient * airDensity  * localVelocity.sqrMagnitude * wingArea * 0.5f * -Mathf.Sign(localVelocity.normalized.y);
         liftDirection = Vector3.Cross(rigid.velocity, Vector3.right).normalized;
-
         liftVector = liftForce * liftDirection;
+
+        dragForce = dragCoefficient * airDensity * localVelocity.sqrMagnitude * wingArea * 0.5f;
+        dragDirection = -rigid.velocity.normalized;
+        dragVector = dragForce * dragDirection;
 
         Vector3 applicationPoint = transform.position;
         rigid.AddForceAtPosition(liftVector, applicationPoint);
+        /* rigid.AddForceAtPosition(dragVector, applicationPoint); */
     }
 }
