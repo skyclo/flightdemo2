@@ -5,10 +5,21 @@ using UnityEngine.UI;
 
 public class Wing : MonoBehaviour
 {
-    // vars
-    public float wingArea = 0f;
+
+    /* ---------------------------------------------------------------------------------------------- */
+    /*                                         CLASS VARIABLES                                        */
+    /* ---------------------------------------------------------------------------------------------- */
+    /* ------------------------------------------ Rigidbody ----------------------------------------- */
     public Rigidbody rigid;
-    public AnimationCurve liftCurve = new AnimationCurve(
+
+    /* ---------------------------------------- Wing Settings --------------------------------------- */
+    public float wingArea               = 0f;
+    private float angleOfAttack         = 0f;
+    private float airDensity            = 1.229f;
+    private Vector3 localVelocity;
+    
+    /* ---------------------------------------- Lift And Drag --------------------------------------- */
+    public AnimationCurve liftCurve     = new AnimationCurve(
         new Keyframe(0f, 0.3f), 
         new Keyframe(35f, 1.9f),
         new Keyframe(45f, 0f),
@@ -19,15 +30,21 @@ public class Wing : MonoBehaviour
         new Keyframe(145f, -1.9f),
         new Keyframe(180f, -0.3f)
     );
-    
-    private float airDensity = 0f;
-    private float angleOfAttack = 0f;
-    private float liftCoefficient = 0f;
-    private float liftForce = 0f;
+    public AnimationCurve dragCurve     = new AnimationCurve(
+        new Keyframe(0f, -0.5f),
+        new Keyframe(40f, 1.7f),
+        new Keyframe(180f, 0.01f)
+    );
+    private float liftCoefficient       = 0f;
+    private float liftForce             = 0f;
+    private float dragCoefficient       = 0f;
+    private float dragForce             = 0f;
     private Vector3 liftDirection;
     private Vector3 liftVector;
-    private Vector3 localVelocity;
+    private Vector3 dragDirection;
+    private Vector3 dragVector;
 
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -50,7 +67,7 @@ public class Wing : MonoBehaviour
         angleOfAttack = Vector3.Angle(Vector3.forward, localVelocity.normalized);
         liftCoefficient = liftCurve.Evaluate(angleOfAttack);
 
-        liftForce = liftCoefficient /* * airDensity  */* localVelocity.sqrMagnitude * wingArea /* 0.5f */ * -Mathf.Sign(localVelocity.normalized.y);
+        liftForce = liftCoefficient * airDensity  * localVelocity.sqrMagnitude * wingArea * 0.5f * -Mathf.Sign(localVelocity.normalized.y);
         liftDirection = Vector3.Cross(rigid.velocity, Vector3.right).normalized;
 
         liftVector = liftForce * liftDirection;
