@@ -227,8 +227,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aa98faa9c0f54409ff91a468d53c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wingArea: 1
   rigid: {fileID: 0}
+  wingArea: 1
   liftCurve:
     serializedVersion: 2
     m_Curve:
@@ -307,6 +307,39 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 180
       value: -0.3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dragCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 40
+      value: 1.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 180
+      value: 0.01
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -468,8 +501,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aa98faa9c0f54409ff91a468d53c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wingArea: 5
   rigid: {fileID: 0}
+  wingArea: 5
   liftCurve:
     serializedVersion: 2
     m_Curve:
@@ -548,6 +581,39 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 180
       value: -0.3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dragCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 40
+      value: 1.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 180
+      value: 0.01
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -852,13 +918,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106472796}
-  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.85, y: 0, z: -2}
   m_LocalScale: {x: 1.25, y: 0.025, z: 1}
   m_Children: []
   m_Father: {fileID: 1274089590}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1106472798
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -931,8 +997,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aa98faa9c0f54409ff91a468d53c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wingArea: 2
   rigid: {fileID: 0}
+  wingArea: 2
   liftCurve:
     serializedVersion: 2
     m_Curve:
@@ -1011,6 +1077,39 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 180
       value: -0.3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dragCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 40
+      value: 1.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 180
+      value: 0.01
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1185,8 +1284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aa98faa9c0f54409ff91a468d53c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wingArea: 1
   rigid: {fileID: 0}
+  wingArea: 1
   liftCurve:
     serializedVersion: 2
     m_Curve:
@@ -1274,6 +1373,39 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  dragCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 40
+      value: 1.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 180
+      value: 0.01
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1642568805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,13 +1433,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642568805}
-  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.85, y: 0, z: -2}
   m_LocalScale: {x: 1.25, y: 0.025, z: 1}
   m_Children: []
   m_Father: {fileID: 1274089590}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1642568807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1380,8 +1512,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aa98faa9c0f54409ff91a468d53c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wingArea: 2
   rigid: {fileID: 0}
+  wingArea: 2
   liftCurve:
     serializedVersion: 2
     m_Curve:
@@ -1460,6 +1592,39 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 180
       value: -0.3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dragCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 40
+      value: 1.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 180
+      value: 0.01
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1640,8 +1805,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52aa98faa9c0f54409ff91a468d53c58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wingArea: 5
   rigid: {fileID: 0}
+  wingArea: 5
   liftCurve:
     serializedVersion: 2
     m_Curve:
@@ -1720,6 +1885,39 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 180
       value: -0.3
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  dragCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: -0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 40
+      value: 1.7
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 180
+      value: 0.01
       inSlope: 0
       outSlope: 0
       tangentMode: 0
