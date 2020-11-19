@@ -31,7 +31,7 @@ public class Wing : MonoBehaviour
         new Keyframe(180f, -0.3f)
     );
     public AnimationCurve dragCurve     = new AnimationCurve(
-        new Keyframe(0f, -0.5f),
+        new Keyframe(0f, 0.001f),
         new Keyframe(40f, 1.7f),
         new Keyframe(180f, 0.01f)
     );
@@ -80,6 +80,6 @@ public class Wing : MonoBehaviour
 
         Vector3 applicationPoint = transform.position;
         rigid.AddForceAtPosition(liftVector, applicationPoint);
-        /* rigid.AddForceAtPosition(dragVector, applicationPoint); */
+        rigid.AddForceAtPosition(dragVector, applicationPoint);
     }
 }
