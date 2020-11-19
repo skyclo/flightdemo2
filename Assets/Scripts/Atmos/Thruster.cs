@@ -28,11 +28,12 @@ public class Thruster : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.DrawRay(transform.position, (thrust*throttle*rigid.transform.forward)*0.001f, Color.yellow);
+        Debug.DrawRay(transform.position, -9.81f*rigid.mass*Vector3.up*0.001f, Color.blue);
     }
 
     void FixedUpdate()
     {
-        rigid.AddForceAtPosition(thrust*throttle*Vector3.forward, transform.position);
+        rigid.AddForceAtPosition(thrust*throttle*rigid.transform.forward, transform.position);
     }
 }
