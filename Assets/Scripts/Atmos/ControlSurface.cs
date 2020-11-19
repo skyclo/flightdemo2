@@ -6,37 +6,30 @@ using UnityEngine.UI;
 public class ControlSurface : MonoBehaviour
 {
     // vars
-    public float wingArea = 0f;
     public Rigidbody rigid;
-    public AnimationCurve liftCurve = new AnimationCurve(
-        new Keyframe(0f, 0.0f), 
-        new Keyframe(5f, 0.38f), 
-        new Keyframe(10f, 0.78f), 
-        new Keyframe(15f, 1.1f),
-        new Keyframe(20f, 1.38f),
-        new Keyframe(25f, 1.55f),
-        new Keyframe(30f, 1.76f),
-        new Keyframe(35f, 1.84f),
-        new Keyframe(40f, 1.82f),
-        new Keyframe(45f, 1.8f),
-        new Keyframe(90f, 0f),
-        new Keyframe(135f, -1.2f),
-        new Keyframe(180f, 0f)
-    );
-    
-    private float airDensity = 0f;
-    private float angleOfAttack = 0f;
-    private float liftCoefficient = 0f;
-    private float liftForce = 0f;
-    private Vector3 liftDirection = new Vector3(0f,0f,0f);
-    private Vector3 liftVector = new Vector3(0f,0f,0f);
-    private Vector3 localVelocity = new Vector3(0f,0f,0f);
 
-
-    // Start is called before the first frame update
-    void Start()
+    public enum ControlTypesEnum
     {
-        
+        Pitch,
+        Roll,
+        Yaw
+    };
+    public ControlTypesEnum controlType;
+    public Wing wing;
+
+    public float maxDeflection = 0f;
+    public float minDeflection = 0f;
+    public float restingDeflection = 0f;
+    public float maxPossibleDeflection = 0f;
+    private float targetDeflection = 0f;
+    private float targetAngle = 0f;
+    private float currentDeflection = 0f;
+    private float maxTorque = 6000f;
+    
+    // Start is called before the first frame update
+    void Awake()
+    {
+        rigid = GetComponentInParent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -47,6 +40,22 @@ public class ControlSurface : MonoBehaviour
 
     void FixedUpdate()
     {
-        
+        if (Input.GetButton("PitchUp")) {
+            targetDeflection = maxDeflection;
+        } else if (Input.GetButton("PitchDown")) {
+            targetDeflection = minDeflection;
+        } else {
+            targetDeflection = restingDeflection;
+        }
+
+        targetAngle = targetDeflection;
+
+        maxPossibleDeflection = Mathf.Rad2Deg * Mathf.Asin(maxTorque / (rigid.velocity.sqrMagnitude * wing.wingArea));
+        if (!float.IsNaN(maxPossibleDeflection)) {
+            targetAngle *= Mathf.Clamp01(maxPossibleDeflection);
+        }
+
+        currentDeflection = Mathf.MoveTowards(currentDeflection, targetDeflection, 5f*Time.fixedDeltaTime);
+        transform.Rotate(Vector3.right, currentDeflection, Space.Self);
     }
 }

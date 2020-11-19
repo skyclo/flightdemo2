@@ -905,6 +905,7 @@ GameObject:
   - component: {fileID: 1106472799}
   - component: {fileID: 1106472798}
   - component: {fileID: 1106472801}
+  - component: {fileID: 1106472802}
   m_Layer: 0
   m_Name: ElvL
   m_TagString: Untagged
@@ -919,13 +920,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1106472796}
-  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.85, y: 0, z: -2}
   m_LocalScale: {x: 1.25, y: 0.025, z: 1}
   m_Children: []
   m_Father: {fileID: 1274089590}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1106472798
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1120,6 +1121,25 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1106472802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106472796}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa530a9717b9bfe49ae11c502f979838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
+  controlType: 0
+  wing: {fileID: 1106472801}
+  maxDeflection: 5
+  minDeflection: -5
+  restingDeflection: 0
+  maxPossibleDeflection: 0
 --- !u!1 &1274089588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1440,7 @@ GameObject:
   - component: {fileID: 1642568808}
   - component: {fileID: 1642568807}
   - component: {fileID: 1642568810}
+  - component: {fileID: 1642568811}
   m_Layer: 0
   m_Name: ElvR
   m_TagString: Untagged
@@ -1434,13 +1455,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642568805}
-  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.85, y: 0, z: -2}
   m_LocalScale: {x: 1.25, y: 0.025, z: 1}
   m_Children: []
   m_Father: {fileID: 1274089590}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1642568807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1635,6 +1656,25 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1642568811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642568805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa530a9717b9bfe49ae11c502f979838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigid: {fileID: 0}
+  controlType: 0
+  wing: {fileID: 1642568810}
+  maxDeflection: 5
+  minDeflection: -5
+  restingDeflection: 0
+  maxPossibleDeflection: 0
 --- !u!1 &1830318998
 GameObject:
   m_ObjectHideFlags: 0
