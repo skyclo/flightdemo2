@@ -395,7 +395,7 @@ MonoBehaviour:
   rigid: {fileID: 0}
   thrust: 49000
   throttle: 1
-  initialVelocity: 200
+  initialVelocity: 350
 --- !u!1 &628021854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,7 +1670,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigid: {fileID: 0}
   controlType: 0
-  wing: {fileID: 1642568810}
+  wing: {fileID: 1893549889}
   maxDeflection: 40
   minDeflection: -40
   restingDeflection: 0
