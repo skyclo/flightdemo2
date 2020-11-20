@@ -22,11 +22,14 @@ public class ControlSurface : MonoBehaviour
     public float restingDeflection = 0f;
     public float maxPossibleDeflection = 0f;
     private float targetDeflection = 0f;
-    private float targetAngle = 0f;
-    private float currentDeflection = 0f;
-    private float maxTorque = 6000f;
+    private Vector3 targetEulerAngle;
     
     // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
     void Awake()
     {
         rigid = GetComponentInParent<Rigidbody>();
@@ -48,14 +51,16 @@ public class ControlSurface : MonoBehaviour
             targetDeflection = restingDeflection;
         }
 
-        targetAngle = targetDeflection;
+        targetEulerAngle = new Vector3(targetDeflection, 0, 0);
 
-        maxPossibleDeflection = Mathf.Rad2Deg * Mathf.Asin(maxTorque / (rigid.velocity.sqrMagnitude * wing.wingArea));
-        if (!float.IsNaN(maxPossibleDeflection)) {
-            targetAngle *= Mathf.Clamp01(maxPossibleDeflection);
+        if (Vector3.Distance(targetEulerAngle, transform.localEulerAngles) > 0.1f) {
+            transform.localEulerAngles = targetEulerAngle;
+            /* transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, targetEulerAngle, 1f*Time.fixedDeltaTime);
+            transform.localEulerAngles *= Mathf.Sign(targetDeflection); */ //TODO
+        } else {
+            transform.localEulerAngles = targetEulerAngle;
         }
 
-        currentDeflection = Mathf.MoveTowards(currentDeflection, targetDeflection, 5f*Time.fixedDeltaTime);
-        transform.Rotate(Vector3.right, currentDeflection, Space.Self);
+        /* Debug.Log("Target: " + targetDeflection + "\t Current: " + transform.localEulerAngles.ToString() + "\t EAngles: " + transform.eulerAngles.ToString()); */
     }
 }

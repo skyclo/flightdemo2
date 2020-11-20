@@ -58,8 +58,8 @@ public class Wing : MonoBehaviour
     {
         Debug.DrawRay(transform.position, liftVector*0.0001f, Color.green);
         Debug.DrawRay(transform.position, dragVector*0.0001f, Color.red);
-        Debug.Log("Lift Direction: " + liftDirection + "\tLift Force: " + liftForce + "\tCL: " + liftCoefficient + "\tAoA: " + angleOfAttack);
-        Debug.Log("Drag Direction: " + dragDirection + "\tDrag Force: " + dragForce + "\tCD: " + dragCoefficient + "\tAoA: " + angleOfAttack);
+        /* Debug.Log("Lift Direction: " + liftDirection + "\tLift Force: " + liftForce + "\tCL: " + liftCoefficient + "\tAoA: " + angleOfAttack);
+        Debug.Log("Drag Direction: " + dragDirection + "\tDrag Force: " + dragForce + "\tCD: " + dragCoefficient + "\tAoA: " + angleOfAttack); */
     }
 
     void FixedUpdate()

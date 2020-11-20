@@ -149,7 +149,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421219078}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: -0.4}
+  m_LocalPosition: {x: 1.5, y: 0, z: -0.9}
   m_LocalScale: {x: 2.5, y: 0.02500549, z: 0.2999983}
   m_Children: []
   m_Father: {fileID: 1274089590}
@@ -484,7 +484,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628021854}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0, z: 0.5}
+  m_LocalPosition: {x: -1.5, y: 0, z: 0.000000029802322}
   m_LocalScale: {x: 2.5, y: 0.025000688, z: 1.499996}
   m_Children: []
   m_Father: {fileID: 1274089590}
@@ -922,7 +922,7 @@ Transform:
   m_GameObject: {fileID: 1106472796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.85, y: 0, z: -2}
-  m_LocalScale: {x: 1.25, y: 0.025, z: 1}
+  m_LocalScale: {x: 1.25, y: 0.025, z: 0.75}
   m_Children: []
   m_Father: {fileID: 1274089590}
   m_RootOrder: 10
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigid: {fileID: 0}
-  wingArea: 2
+  wingArea: 1
   liftCurve:
     serializedVersion: 2
     m_Curve:
@@ -1136,8 +1136,8 @@ MonoBehaviour:
   rigid: {fileID: 0}
   controlType: 0
   wing: {fileID: 1106472801}
-  maxDeflection: 5
-  minDeflection: -5
+  maxDeflection: 40
+  minDeflection: -40
   restingDeflection: 0
   maxPossibleDeflection: 0
 --- !u!1 &1274089588
@@ -1181,7 +1181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274089588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 995351388}
@@ -1227,7 +1227,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624680167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5, y: 0, z: -0.4}
+  m_LocalPosition: {x: -1.5, y: 0, z: -0.9}
   m_LocalScale: {x: 2.5, y: 0.02500549, z: 0.29999825}
   m_Children: []
   m_Father: {fileID: 1274089590}
@@ -1457,7 +1457,7 @@ Transform:
   m_GameObject: {fileID: 1642568805}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.85, y: 0, z: -2}
-  m_LocalScale: {x: 1.25, y: 0.025, z: 1}
+  m_LocalScale: {x: 1.25, y: 0.025, z: 0.75}
   m_Children: []
   m_Father: {fileID: 1274089590}
   m_RootOrder: 11
@@ -1535,7 +1535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigid: {fileID: 0}
-  wingArea: 2
+  wingArea: 1
   liftCurve:
     serializedVersion: 2
     m_Curve:
@@ -1671,8 +1671,8 @@ MonoBehaviour:
   rigid: {fileID: 0}
   controlType: 0
   wing: {fileID: 1642568810}
-  maxDeflection: 5
-  minDeflection: -5
+  maxDeflection: 40
+  minDeflection: -40
   restingDeflection: 0
   maxPossibleDeflection: 0
 --- !u!1 &1830318998
@@ -1717,7 +1717,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830318998}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 3.25
+  m_Radius: 3
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -1748,7 +1748,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 1830318998}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -1828,7 +1828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1893549887}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.5, y: 0, z: 0.5}
+  m_LocalPosition: {x: 1.5, y: 0, z: 0.000000029802322}
   m_LocalScale: {x: 2.5, y: 0.025000688, z: 1.499996}
   m_Children: []
   m_Father: {fileID: 1274089590}
@@ -2230,7 +2230,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094566082}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 3.25
+  m_Radius: 3
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -2261,7 +2261,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2094566082}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
@@ -2355,7 +2355,7 @@ WheelCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111495221}
   m_Center: {x: 0, y: 0, z: 0}
-  m_Radius: 3.25
+  m_Radius: 3
   m_SuspensionSpring:
     spring: 35000
     damper: 4500
@@ -2386,7 +2386,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 2111495221}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
