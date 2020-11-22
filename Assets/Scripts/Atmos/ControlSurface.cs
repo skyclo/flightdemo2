@@ -17,17 +17,24 @@ public class ControlSurface : MonoBehaviour
     public ControlTypesEnum controlType;
     public Wing wing;
 
-    public float maxDeflection = 0f;
-    public float minDeflection = 0f;
-    public float restingDeflection = 0f;
-    public float maxPossibleDeflection = 0f;
-    private float targetDeflection = 0f;
-    private Vector3 targetEulerAngle;
+    public float positiveDeployAngle = 0f;
+    private Quaternion positiveDeployRotation;
+    public float negativeDeployAngle = 0f;
+    private Quaternion negativeDeployRotation;
+    public float restingAngle = 0f;
+    private Quaternion restingRotation;
+    private Quaternion targetRotation;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (controlType.Equals(ControlTypesEnum.Pitch)) {
+            positiveDeployRotation = Quaternion.Euler(positiveDeployAngle, 0f, 0f);
+            negativeDeployRotation = Quaternion.Euler(negativeDeployAngle, 0f, 0f);
+            restingRotation = Quaternion.Euler(restingAngle, 0f, 0f);
+        } else {
+            throw new System.Exception("Invalid Control Type Assigned.");
+        }
     }
 
     void Awake()
@@ -44,23 +51,17 @@ public class ControlSurface : MonoBehaviour
     void FixedUpdate()
     {
         if (Input.GetButton("PitchUp")) {
-            targetDeflection = maxDeflection;
+            targetRotation = positiveDeployRotation;
         } else if (Input.GetButton("PitchDown")) {
-            targetDeflection = minDeflection;
+            targetRotation = negativeDeployRotation;
         } else {
-            targetDeflection = restingDeflection;
+            targetRotation = restingRotation;
         }
-
-        targetEulerAngle = new Vector3(targetDeflection, 0, 0);
-
-        if (Vector3.Distance(targetEulerAngle, transform.localEulerAngles) > 0.1f) {
-            transform.localEulerAngles = targetEulerAngle;
-            /* transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, targetEulerAngle, 1f*Time.fixedDeltaTime);
-            transform.localEulerAngles *= Mathf.Sign(targetDeflection); */ //TODO
+        
+        if (Quaternion.Angle(transform.localRotation, targetRotation) > 1f) {
+            transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, 2f*Time.fixedDeltaTime);
         } else {
-            transform.localEulerAngles = targetEulerAngle;
+            transform.localRotation = targetRotation;
         }
-
-        /* Debug.Log("Target: " + targetDeflection + "\t Current: " + transform.localEulerAngles.ToString() + "\t EAngles: " + transform.eulerAngles.ToString()); */
     }
 }
