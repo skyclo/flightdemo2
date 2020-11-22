@@ -59,7 +59,7 @@ public class ControlSurface : MonoBehaviour
         }
         
         if (Quaternion.Angle(transform.localRotation, targetRotation) > 1f) {
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, targetRotation, 2f*Time.fixedDeltaTime);
+            transform.localRotation = Quaternion.Slerp(transform.localRotation, targetRotation, 2f*Time.fixedDeltaTime);
         } else {
             transform.localRotation = targetRotation;
         }
