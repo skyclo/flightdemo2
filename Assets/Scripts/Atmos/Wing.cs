@@ -71,7 +71,7 @@ public class Wing : MonoBehaviour
         dragCoefficient = dragCurve.Evaluate(angleOfAttack);
 
         liftForce = liftCoefficient * airDensity  * localVelocity.sqrMagnitude * wingArea * 0.5f * -Mathf.Sign(localVelocity.normalized.y);
-        liftDirection = Vector3.Cross(rigid.velocity, Vector3.right).normalized;
+        liftDirection = transform.up /* Vector3.Cross(rigid.velocity, Vector3.right).normalized */;
         liftVector = liftForce * liftDirection;
 
         dragForce = dragCoefficient * airDensity * localVelocity.sqrMagnitude * wingArea * 0.5f;
