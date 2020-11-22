@@ -395,7 +395,7 @@ MonoBehaviour:
   rigid: {fileID: 0}
   thrust: 49000
   throttle: 1
-  initialVelocity: 500
+  initialVelocity: 0
 --- !u!1 &628021854
 GameObject:
   m_ObjectHideFlags: 0
@@ -1180,7 +1180,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274089588}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 995351388}
@@ -1192,6 +1192,9 @@ Transform:
   - {fileID: 421219079}
   - {fileID: 1106472797}
   - {fileID: 1642568806}
+  - {fileID: 2111495222}
+  - {fileID: 2094566083}
+  - {fileID: 1830318999}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1514,7 +1517,7 @@ Transform:
   m_LocalScale: {x: 1000000, y: 0.2, z: 1000000}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1642568805
 GameObject:
@@ -1776,7 +1779,7 @@ GameObject:
   - component: {fileID: 1830319002}
   - component: {fileID: 1830319000}
   m_Layer: 0
-  m_Name: Wheel
+  m_Name: FrontWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1790,13 +1793,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1830318998}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.27899998, z: 1.5}
-  m_LocalScale: {x: 0.5000001, y: 0.050000016, z: 0.5}
-  m_Children:
-  - {fileID: 2094566083}
-  - {fileID: 2111495222}
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_LocalPosition: {x: 0, y: -0.721, z: 1.5}
+  m_LocalScale: {x: 0.5000001, y: 0.05000002, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 1274089590}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!146 &1830319000
 WheelCollider:
@@ -2182,7 +2183,7 @@ GameObject:
   - component: {fileID: 2094566086}
   - component: {fileID: 2094566084}
   m_Layer: 0
-  m_Name: Wheel
+  m_Name: RBackWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2195,12 +2196,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2094566082}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -20, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1, y: -0.7209999, z: -1}
+  m_LocalScale: {x: 0.5000001, y: 0.050000023, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 1830318999}
-  m_RootOrder: 0
+  m_Father: {fileID: 1274089590}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!146 &2094566084
 WheelCollider:
@@ -2292,7 +2293,7 @@ GameObject:
   - component: {fileID: 2111495225}
   - component: {fileID: 2111495223}
   m_Layer: 0
-  m_Name: Wheel
+  m_Name: LBackWheel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2305,12 +2306,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2111495221}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 20, z: -5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -1, y: -0.72100013, z: -1}
+  m_LocalScale: {x: 0.5000001, y: 0.050000023, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 1830318999}
-  m_RootOrder: 1
+  m_Father: {fileID: 1274089590}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!146 &2111495223
 WheelCollider:
