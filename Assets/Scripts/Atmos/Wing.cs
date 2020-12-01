@@ -20,7 +20,7 @@ public class Wing : MonoBehaviour
     
     /* ---------------------------------------- Lift And Drag --------------------------------------- */
     public AnimationCurve liftCurve     = new AnimationCurve(
-        new Keyframe(0f, 0.3f), 
+        new Keyframe(0f, 0f), 
         new Keyframe(35f, 1.9f),
         new Keyframe(45f, 0f),
         new Keyframe(50f, 0.5f),
@@ -28,7 +28,7 @@ public class Wing : MonoBehaviour
         new Keyframe(130f, -0.5f),
         new Keyframe(135f, 0f),
         new Keyframe(145f, -1.9f),
-        new Keyframe(180f, -0.3f)
+        new Keyframe(180f, 0f)
     );
     public AnimationCurve dragCurve     = new AnimationCurve(
         new Keyframe(0f, 0.001f),

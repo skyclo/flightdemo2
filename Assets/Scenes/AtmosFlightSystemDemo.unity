@@ -234,7 +234,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 180
-      value: -0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -509,7 +509,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -581,7 +581,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 180
-      value: -0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1078,7 +1078,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 180
-      value: -0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1164,7 +1164,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1274089588}
   serializedVersion: 2
-  m_Mass: 7200
+  m_Mass: 12474
   m_Drag: 0
   m_AngularDrag: 0
   m_UseGravity: 0
@@ -1311,7 +1311,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1383,7 +1383,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 180
-      value: -0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1633,7 +1633,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1705,7 +1705,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 180
-      value: -0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1929,7 +1929,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2001,7 +2001,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 180
-      value: -0.3
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
